@@ -74,3 +74,13 @@ def log10(n):
     if n <= 0:
         raise ValueError("El logaritmo solo se calcula para números mayores que cero")
     return math.log10(n)
+
+def mcd(a, b):
+    if a <= 0 or b <= 0 or a != int(a) or b != int(b):
+        raise ValueError("El MCD se calcula solo con enteros positivos")
+    return math.gcd(int(a), int(b))
+
+def mcm(a, b):
+    if a <= 0 or b <= 0 or a != int(a) or b != int(b):
+        raise ValueError("El MCM se calcula solo con enteros positivos")
+    return math.lcm(int(a), int(b))

@@ -4,6 +4,7 @@ from operaciones import (
     suma, resta, multiplicacion, division, potencia, modulo,
     raiz_cuadrada, porcentaje, valor_absoluto, factorial,
     promedio, redondear, seno, coseno, tangente, ln, log10,
+    mcd, mcm,
 )
 
 hist = []
@@ -30,6 +31,8 @@ def menu():
     print("17. Tangente")
     print("18. Logaritmo natural")
     print("19. Logaritmo base 10")
+    print("20. MCD")
+    print("21. MCM")
     print("0.  Salir")
 
 
@@ -155,6 +158,12 @@ def main():
             elif op == "19":
                 n = pedir("Número: ")
                 reg(f"logaritmo base 10 de {n}", log10(n))
+            elif op == "20":
+                a, b = pedir2()
+                reg(f"MCD de {a} y {b}", mcd(a, b))
+            elif op == "21":
+                a, b = pedir2()
+                reg(f"MCM de {a} y {b}", mcm(a, b))
             else:
                 print("Opción no válida")
         except (ValueError, ZeroDivisionError, OverflowError) as err:
