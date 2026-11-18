@@ -3,7 +3,7 @@ import math
 from operaciones import (
     suma, resta, multiplicacion, division, potencia, modulo,
     raiz_cuadrada, porcentaje, valor_absoluto, factorial,
-    promedio, redondear,
+    promedio, redondear, seno, coseno, tangente,
 )
 
 hist = []
@@ -25,6 +25,9 @@ def menu():
     print("12. Redondeo")
     print("13. Ver historial")
     print("14. Limpiar historial")
+    print("15. Seno")
+    print("16. Coseno")
+    print("17. Tangente")
     print("0.  Salir")
 
 
@@ -135,6 +138,15 @@ def main():
                 ver_hist()
             elif op == "14":
                 limpiar_hist()
+            elif op == "15":
+                g = pedir("Ángulo en grados: ")
+                reg(f"seno de {g}°", seno(g))
+            elif op == "16":
+                g = pedir("Ángulo en grados: ")
+                reg(f"coseno de {g}°", coseno(g))
+            elif op == "17":
+                g = pedir("Ángulo en grados: ")
+                reg(f"tangente de {g}°", tangente(g))
             else:
                 print("Opción no válida")
         except (ValueError, ZeroDivisionError, OverflowError) as err:

@@ -53,3 +53,14 @@ def division(a, b):
     if b == 0:
         raise ValueError("No se puede dividir entre cero")
     return a / b
+
+def seno(g):
+    return round(math.sin(math.radians(g)), 10) + 0.0
+
+def coseno(g):
+    return round(math.cos(math.radians(g)), 10) + 0.0
+
+def tangente(g):
+    if (g - 90) % 180 == 0:
+        raise ValueError("La tangente no está definida para ese ángulo")
+    return round(math.tan(math.radians(g)), 10) + 0.0
