@@ -13,6 +13,8 @@ def potencia(b, e):
     return b ** e
 
 def modulo(a, b):
+    if b == 0:
+        raise ValueError("No se puede calcular el módulo con divisor cero")
     return a % b
 
 def raiz_cuadrada(n):
@@ -40,3 +42,8 @@ def redondear(n, d):
     if d < 0 or d != int(d):
         raise ValueError("Los decimales deben ser un entero no negativo")
     return round(n, int(d))
+
+def division(a, b):
+    if b == 0:
+        raise ValueError("No se puede dividir entre cero")
+    return a / b
