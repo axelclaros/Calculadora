@@ -3,7 +3,7 @@ import math
 from operaciones import (
     suma, resta, multiplicacion, division, potencia, modulo,
     raiz_cuadrada, porcentaje, valor_absoluto, factorial,
-    promedio, redondear, seno, coseno, tangente,
+    promedio, redondear, seno, coseno, tangente, ln, log10,
 )
 
 hist = []
@@ -28,6 +28,8 @@ def menu():
     print("15. Seno")
     print("16. Coseno")
     print("17. Tangente")
+    print("18. Logaritmo natural")
+    print("19. Logaritmo base 10")
     print("0.  Salir")
 
 
@@ -147,6 +149,12 @@ def main():
             elif op == "17":
                 g = pedir("Ángulo en grados: ")
                 reg(f"tangente de {g}°", tangente(g))
+            elif op == "18":
+                n = pedir("Número: ")
+                reg(f"logaritmo natural de {n}", ln(n))
+            elif op == "19":
+                n = pedir("Número: ")
+                reg(f"logaritmo base 10 de {n}", log10(n))
             else:
                 print("Opción no válida")
         except (ValueError, ZeroDivisionError, OverflowError) as err:

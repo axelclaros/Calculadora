@@ -64,3 +64,13 @@ def tangente(g):
     if (g - 90) % 180 == 0:
         raise ValueError("La tangente no está definida para ese ángulo")
     return round(math.tan(math.radians(g)), 10) + 0.0
+
+def ln(n):
+    if n <= 0:
+        raise ValueError("El logaritmo solo se calcula para números mayores que cero")
+    return math.log(n)
+
+def log10(n):
+    if n <= 0:
+        raise ValueError("El logaritmo solo se calcula para números mayores que cero")
+    return math.log10(n)
