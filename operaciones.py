@@ -25,3 +25,8 @@ def porcentaje(p, c):
 
 def valor_absoluto(n):
     return abs(n)
+
+def factorial(n):
+    if n < 0 or n != int(n):
+        raise ValueError("El factorial solo se calcula para enteros no negativos")
+    return math.factorial(int(n))
