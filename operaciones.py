@@ -10,6 +10,10 @@ def multiplicacion(a,b):
     return a*b
 
 def potencia(b, e):
+    if b == 0 and e < 0:
+        raise ValueError("No se puede elevar cero a un exponente negativo")
+    if b < 0 and e != int(e):
+        raise ValueError("No se puede elevar un número negativo a un exponente decimal")
     return b ** e
 
 def modulo(a, b):
@@ -31,6 +35,8 @@ def valor_absoluto(n):
 def factorial(n):
     if n < 0 or n != int(n):
         raise ValueError("El factorial solo se calcula para enteros no negativos")
+    if n > 1000:
+        raise ValueError("El número es demasiado grande (máximo 1000)")
     return math.factorial(int(n))
 
 def promedio(n):

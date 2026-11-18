@@ -1,3 +1,5 @@
+import math
+
 from operaciones import (
     suma, resta, multiplicacion, division, potencia, modulo,
     raiz_cuadrada, porcentaje, valor_absoluto, factorial,
@@ -22,14 +24,36 @@ def mostrar_menu():
     print("0.  Salir")
 
 
+def convertir_numero(texto):
+    try:
+        numero = float(texto.strip().replace(",", "."))
+    except ValueError:
+        return None
+    if not math.isfinite(numero):
+        return None
+    return numero
+
+
 def pedir_numero(mensaje):
-    return float(input(mensaje))
+    while True:
+        numero = convertir_numero(input(mensaje))
+        if numero is not None:
+            return numero
+        print("Entrada no válida: escribe un número (por ejemplo 5 o 3.5)")
 
 
 def pedir_dos_numeros():
     a = pedir_numero("Primer número: ")
     b = pedir_numero("Segundo número: ")
     return a, b
+
+
+def pedir_lista_numeros(mensaje):
+    while True:
+        numeros = [convertir_numero(x) for x in input(mensaje).split()]
+        if numeros and None not in numeros:
+            return numeros
+        print("Entrada no válida: escribe uno o más números separados por espacios")
 
 
 def main():
@@ -75,8 +99,7 @@ def main():
                 numero = pedir_numero("Número entero: ")
                 print("Resultado:", factorial(numero))
             elif opcion == "11":
-                texto = input("Números separados por espacios: ")
-                numeros = [float(x) for x in texto.split()]
+                numeros = pedir_lista_numeros("Números separados por espacios: ")
                 print("Resultado:", promedio(numeros))
             elif opcion == "12":
                 numero = pedir_numero("Número: ")
@@ -84,7 +107,7 @@ def main():
                 print("Resultado:", redondear(numero, decimales))
             else:
                 print("Opción no válida")
-        except ValueError as error:
+        except (ValueError, ZeroDivisionError, OverflowError) as error:
             print("Error:", error)
 
         print()
