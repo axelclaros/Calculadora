@@ -4,9 +4,11 @@
 
 Calculadora por consola hecha en Python. Permite realizar operaciones matemáticas desde un menú, controla los datos mal escritos para que el programa no falle y guarda un historial de las operaciones mientras está abierto.
 
-Fue desarrollada como proyecto de práctica por estudiantes de la FNI (Ingeniería de Sistemas e Ingeniería Informática) y se fue ampliando con nuevas funcionalidades.
+Fue desarrollada como proyecto de práctica por estudiantes de la FNI (Ingeniería de Sistemas e Ingeniería Informática) y se fue ampliando con nuevas funcionalidades, incluyendo operaciones científicas como trigonometría y logaritmos.
 
 ## Operaciones y estados
+
+### Funcionalidades de la práctica
 
 | N.º | Funcionalidad | Descripción | Estado |
 |----|---------------|-------------|--------|
@@ -25,6 +27,14 @@ Fue desarrollada como proyecto de práctica por estudiantes de la FNI (Ingenier�
 | 13 | Historial de operaciones | Guarda y muestra las operaciones realizadas | Completada |
 | 14 | Limpiar historial | Borra el historial | Completada |
 | 15 | Mejorar documentación | README con ejemplos de uso | Completada |
+
+### Funciones extra (ampliación propia)
+
+| Funcionalidad | Descripción | Estado |
+|---------------|-------------|--------|
+| Seno, coseno y tangente | Funciones trigonométricas con el ángulo en grados | Completada |
+| Logaritmo | Logaritmo natural y logaritmo en base 10 | Completada |
+| MCD y MCM | Máximo común divisor y mínimo común múltiplo | Completada |
 
 Además, el programa incluye suma, resta, multiplicación y división.
 
@@ -46,6 +56,13 @@ Además, el programa incluye suma, resta, multiplicación y división.
 12. Redondeo
 13. Ver historial
 14. Limpiar historial
+15. Seno
+16. Coseno
+17. Tangente
+18. Logaritmo natural
+19. Logaritmo base 10
+20. MCD
+21. MCM
 0.  Salir
 ```
 
@@ -66,6 +83,31 @@ Resultado: 30.0
 Elige una opción: 11
 Números separados por espacios: 4 8 6
 Resultado: 6.0
+```
+
+**Seno** de un ángulo en grados:
+
+```
+Elige una opción: 15
+Ángulo en grados: 30
+Resultado: 0.5
+```
+
+**Logaritmo base 10:**
+
+```
+Elige una opción: 19
+Número: 1000
+Resultado: 3.0
+```
+
+**MCD** de dos números:
+
+```
+Elige una opción: 20
+Primer número: 12
+Segundo número: 18
+Resultado: 6
 ```
 
 **División entre cero** (el programa avisa y no se cierra):
@@ -91,8 +133,8 @@ Primer número: 5
 ```
 Elige una opción: 13
 ===== HISTORIAL =====
-1. 5.0 + 3.0 = 8.0
-2. 15.0% de 200.0 = 30.0
+1. seno de 30.0° = 0.5
+2. MCD de 12.0 y 18.0 = 6
 ```
 
 ## Tecnologías
