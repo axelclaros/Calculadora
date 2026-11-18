@@ -24,6 +24,7 @@ def menu():
     print("11. Promedio")
     print("12. Redondeo")
     print("13. Ver historial")
+    print("14. Limpiar historial")
     print("0.  Salir")
 
 
@@ -71,6 +72,14 @@ def ver_hist():
     else:
         for i, o in enumerate(hist, start=1):
             print(f"{i}. {o}")
+
+
+def limpiar_hist():
+    if len(hist) == 0:
+        print("El historial ya está vacío")
+    else:
+        hist.clear()
+        print("Historial borrado")
 
 
 def main():
@@ -124,6 +133,8 @@ def main():
                 reg(f"{n} redondeado a {d} decimales", redondear(n, d))
             elif op == "13":
                 ver_hist()
+            elif op == "14":
+                limpiar_hist()
             else:
                 print("Opción no válida")
         except (ValueError, ZeroDivisionError, OverflowError) as err:
