@@ -20,5 +20,8 @@ def raiz_cuadrada(n):
         raise ValueError("No se puede calcular la raíz cuadrada de un número negativo")
     return math.sqrt(n)
 
-def porcentaje(porcentaje, cantidad):
-    return cantidad * porcentaje / 100
+def porcentaje(p, c):
+    return c * p / 100
+
+def valor_absoluto(n):
+    return abs(n)
