@@ -35,3 +35,8 @@ def promedio(n):
     if len(n) == 0:
         raise ValueError("No se puede calcular el promedio de una lista vacía")
     return sum(n) / len(n)
+
+def redondear(n, d):
+    if d < 0 or d != int(d):
+        raise ValueError("Los decimales deben ser un entero no negativo")
+    return round(n, int(d))
